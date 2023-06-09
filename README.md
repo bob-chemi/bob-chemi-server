@@ -2,6 +2,6 @@
 
 
 
-## Git commit convention
+## currently in development
 
 
