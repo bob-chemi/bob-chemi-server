@@ -37,11 +37,11 @@ export class Group extends BaseEntity {
   groupDate: Date;
 
   @ApiProperty({ description: "소모임 모이는 Hour" })
-  @Column()
+  @Column({ nullable: true })
   groupHour: string;
 
   @ApiProperty({ description: "소모임 모이는 Min" })
-  @Column()
+  @Column({ nullable: true })
   groupMin: string;
 
   @ApiProperty({ description: "소모임 모임 장소" })
@@ -49,7 +49,7 @@ export class Group extends BaseEntity {
   groupLocation: string;
 
   @ApiProperty({ description: "소모임 인원 제한" })
-  @Column()
+  @Column({ nullable: true })
   groupPeopleLimit: string;
 
   @ApiProperty({
@@ -78,7 +78,7 @@ export class Group extends BaseEntity {
   users: User[];
 
   @ApiProperty({ description: "소모임 이미지 한장" })
-  @Column()
+  @Column({ nullable: true })
   image: string;
 
   @ApiProperty({ description: "소모임 만든 유저" })

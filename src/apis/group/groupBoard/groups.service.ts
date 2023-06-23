@@ -13,7 +13,6 @@ import { Member } from "./entites/members.entity";
 import { MemberStatus } from "./entites/members.status.enum";
 import { UsersService } from "src/apis/users/users.service";
 import { FileUploadService } from "src/apis/file-upload/file-upload.service";
-import { User } from "src/apis/users/entities/user.entity";
 
 @Injectable()
 export class GroupsService {
@@ -22,10 +21,7 @@ export class GroupsService {
     private groupRepository: Repository<Group>,
     private userServices: UsersService,
 
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
-
-    @InjectRepository(Member) // MemberRepository 주입
+    @InjectRepository(Member)
     private memberRepository: Repository<Member>,
     private readonly fileUploadService: FileUploadService
   ) {}
@@ -179,7 +175,7 @@ export class GroupsService {
 
     if (Number(group.groupPeopleLimit) <= confirmedMember) {throw new ConflictException("인원이 마감되었습니다.");} //prettier-ignore
     if (isPending) {throw new ConflictException("이미 가입신청 되었습니다.");} //prettier-ignore
-    if (isConfirmed) {throw new ConflictException("이미 가입된 그룹입니다.");} //prettier-ignore
+    if (isConfirmed) {throw new ConflictException("이미 가입된 소모임입니다.");} //prettier-ignore
 
     const newMember = new Member();
     newMember.user = user;
@@ -195,7 +191,6 @@ export class GroupsService {
       where: { groupId },
       relations: ["members"],
     });
-    if(!group) {throw new NotFoundException('찾을 수 없는 소모임 입니다.')} //prettier-ignore
 
     const checkRequest = await this.memberRepository.findOne({
       where: {
@@ -203,13 +198,9 @@ export class GroupsService {
         status: MemberStatus.PENDING,
       },
     });
-
-    if (!checkRequest) {
-      throw new NotFoundException("가입 신청이 없는 멤버입니다.");
-    }
-    if (checkRequest.status === MemberStatus.CONFIRMED) {
-      throw new NotFoundException("이미 수락한 신청자 입니다.");
-    }
+    if(!group) {throw new NotFoundException('찾을 수 없는 소모임 입니다.')} //prettier-ignore
+    if (!checkRequest) {throw new NotFoundException("가입 신청이 없는 멤버입니다.")} //prettier-ignore
+    if (checkRequest.status === MemberStatus.CONFIRMED) {throw new NotFoundException("이미 수락한 신청자 입니다.")} //prettier-ignore
 
     const groupMembersCount = group.members.length + 1;
 
@@ -236,13 +227,7 @@ export class GroupsService {
   //<<------------가입 대기중인 멤버 조회------------>>
   async getPendingMembers(groupId: any): Promise<Member[]> {
     const group: FindOneOptions<Group> = { where: { groupId: groupId } };
-
     const foundGroup = await this.groupRepository.findOne(group);
-
-    if (!foundGroup) {
-      throw new NotFoundException("찾을 수 없는 소모임입니다.");
-    }
-
     const pendingMembers = await this.memberRepository.find({
       where: {
         group: { groupId: foundGroup.groupId },
@@ -250,9 +235,8 @@ export class GroupsService {
       },
     });
 
-    if (pendingMembers.length === 0) {
-      throw new NotFoundException("가입 대기 중인 멤버가 없습니다.");
-    }
+    if (!foundGroup) {throw new NotFoundException("찾을 수 없는 소모임입니다.")} //prettier-ignore
+    if (pendingMembers.length === 0) {throw new NotFoundException("가입 대기 중인 멤버가 없습니다.")} //prettier-ignore
 
     return pendingMembers;
   }
@@ -262,10 +246,6 @@ export class GroupsService {
     const group: FindOneOptions<Group> = { where: { groupId: groupId } };
     const foundGroup = await this.groupRepository.findOne(group);
 
-    if (!foundGroup) {
-      throw new NotFoundException("찾을 수 없는 소모임입니다.");
-    }
-
     const confirmedMembers = await this.memberRepository.find({
       where: {
         group: { groupId: foundGroup.groupId },
@@ -273,9 +253,8 @@ export class GroupsService {
       },
     });
 
-    if (confirmedMembers.length === 0) {
-      throw new NotFoundException("가입한 멤버가 없습니다.");
-    }
+    if (!foundGroup) {throw new NotFoundException("찾을 수 없는 소모임입니다.")} //prettier-ignore
+    if (confirmedMembers.length === 0) {throw new NotFoundException("가입한 멤버가 없습니다.");} //prettier-ignore
 
     return confirmedMembers;
   }
