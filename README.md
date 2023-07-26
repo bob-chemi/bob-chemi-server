@@ -1,73 +1,205 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# 서비스 기획의도
+"밥케미" 서비스는 혼밥하는 사람들을 위한 매칭 서비스입니다. 우리는 사회가 점점 개인화되어가고 있는 현대사회에서 많은 사람들이 혼자 식사를 하는 상황이 늘어나고 있다는 점을 인식하였습니다. 이러한 현상은 특히 도시에서 일하는 직장인들과 대학생, 그리고 혼자 사는 사람들에게 두드러지게 나타나고 있습니다. 
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+하지만, 많은 사람들이 혼자 식사를 하긴 해도 사실은 다른 사람들과 같이 식사하고 싶어합니다. 누군가와 함께 식사를 하면 그만큼 식사 시간이 즐거워지고, 음식의 맛도 더욱 향상된다는 것이 일반적인 인식입니다. 또한, 같이 식사를 하는 것은 새로운 사람들을 만나고 관계를 형성하는 좋은 기회이기도 합니다.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+"밥케미" 서비스는 이러한 사람들의 요구를 충족시키기 위해 탄생하였습니다. 사용자들은 자신의 위치 원하는 나이대,성별 등을 설정하고 서비스에 등록하면, 서비스는 이 정보를 바탕으로 가장 잘 맞는 다른 사용자를 매칭해줍니다. 이렇게 매칭된 사용자들은 함께 식사를 하며 새로운 경험을 쌓고 관계를 형성할 수 있습니다.
 
-## Description
+ 1:1 매칭 뿐만 아니라 같은 관심사를 가진 사람들이 모여 함께 식사하고 이야기 나눌 수 있는 소모임 기능도 제공합니다. 사용자는 특정 주제를 기반으로 소모임을 개설하거나 기존의 소모임에 참여하여 더 많은 사람들과의 소통과 친목을 도모할 수 있습니다.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+이 서비스는 혼밥하는 사람들에게 새로운 가치를 제공함으로써 그들의 식사 경험을 더욱 풍요롭게 만들고, 사람들이 서로를 더 잘 이해하고 소통할 수 있는 기회를 제공하는 것을 목표로 합니다.
+</br>
+</br>
 
-## Installation
+# 서비스 배포 주소
 
-```bash
-$ yarn install
+</br>
+</br>
+
+# 제작 기간 & 참여 인원 </br>
+- 2023년 06월 ~ 2023년 07월 </br>
+- `FE`: 3명, `BE`: 3명 
+</br>
+</br>
+
+
+# 사용 기술
+- Nest.js, TypeScript, Rest-API / AWS, S3, EC2 / PostgreSQL, TypeORM, Redis / JWT/ Docker
+- Socket.io
+
+</br>
+</br>
+
+
+# 핵심 기능
+
+- 1:1 매칭: 사용자는 자신의 선호하는 나이대, 성별, 위치 등을 설정하여 서비스에 등록할 수 있습니다. 이 정보를 바탕으로 서비스는 가장 잘 맞는 다른 사용자를 매칭해줍니다. 매칭된 사용자들은 함께 식사를 하며 새로운 경험을 쌓고 관계를 형성할 수 있습니다.
+
+- 소모임 기능: 사용자는 특정 주제를 기반으로 소모임을 개설하거나 기존의 소모임에 참여하여 더 많은 사람들과의 소통과 친목을 도모할 수 있습니다. 이는 1:1 매칭보다 더 넓은 범위의 사람들과 교류할 수 있는 기회를 제공합니다.
+
+- 리뷰 및 평가 시스템: 사용자는 매칭된 사람이나 소모임에 참여한 사람들에 대해 리뷰와 평가를 남길 수 있습니다. 이는 서비스의 신뢰성을 높이고, 사용자 간의 상호 작용을 촉진하는 역할을 합니다.
+
+- 맛집 추천 기능: 매칭이 완료된 후, 사용자의 위치를 기반으로 주변의 맛집을 추천해주는 기능이 있습니다. 이를 통해 사용자는 새로운 맛집을 발견하고 함께 식사를 하는 장소를 쉽게 선택할 수 있습니다.
+</br>
+</br>
+</br>
+</br>
+
+# ERD
+https://www.erdcloud.com/d/Dub6mgRScDSSMiBT7
+</br>
+</br>
+<img width="1000" alt="스크린샷 2023-07-26 오후 4 45 17" src="https://github.com/bob-chemi/bob-chemi-server/assets/113571059/37b17307-087b-4669-b620-1cb175cacb9f">
+
+</br>
+</br>
+
+# API DOCS
+  Swagger Docs
+</br>
+</br>
+# 서버 폴더구조
+```
+📦src
+ ┣ 📂apis
+ ┃ ┣ 📂auth
+ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┣ 📜create-auth.dto.ts
+ ┃ ┃ ┃ ┣ 📜login.dto.ts
+ ┃ ┃ ┃ ┣ 📜sendPhone.dto.ts
+ ┃ ┃ ┃ ┗ 📜update-auth.dto.ts
+ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┗ 📜auth.entity.ts
+ ┃ ┃ ┣ 📂test
+ ┃ ┃ ┃ ┣ 📜auth.controller.spec.ts
+ ┃ ┃ ┃ ┗ 📜auth.service.spec.ts
+ ┃ ┃ ┣ 📜auth.controller.ts
+ ┃ ┃ ┣ 📜auth.module.ts
+ ┃ ┃ ┗ 📜auth.service.ts
+ ┃ ┣ 📂file-upload
+ ┃ ┃ ┣ 📜file-upload.controller.ts
+ ┃ ┃ ┣ 📜file-upload.module.ts
+ ┃ ┃ ┗ 📜file-upload.service.ts
+ ┃ ┣ 📂foodie-board
+ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┣ 📜create-foodie-board.dto.ts
+ ┃ ┃ ┃ ┗ 📜update-foodie-board.dto.ts
+ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┣ 📜foodie-board.entity.ts
+ ┃ ┃ ┃ ┗ 📜foodieBoard-image.entity.ts
+ ┃ ┃ ┣ 📂test
+ ┃ ┃ ┃ ┣ 📜foodie-board.controller.spec.ts
+ ┃ ┃ ┃ ┗ 📜foodie-board.service.spec.ts
+ ┃ ┃ ┣ 📜foodie-board.controller.ts
+ ┃ ┃ ┣ 📜foodie-board.module.ts
+ ┃ ┃ ┗ 📜foodie-board.service.ts
+ ┃ ┣ 📂group
+ ┃ ┃ ┣ 📂groupBoard
+ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┣ 📜create.group.dto.ts
+ ┃ ┃ ┃ ┃ ┗ 📜update.group.dto.ts
+ ┃ ┃ ┃ ┣ 📂entites
+ ┃ ┃ ┃ ┃ ┣ 📜groups.entity.ts
+ ┃ ┃ ┃ ┃ ┣ 📜groups.status.enum.ts
+ ┃ ┃ ┃ ┃ ┣ 📜members.entity.ts
+ ┃ ┃ ┃ ┃ ┗ 📜members.status.enum.ts
+ ┃ ┃ ┃ ┣ 📂pipes
+ ┃ ┃ ┃ ┃ ┗ 📜group.status.validation.ts
+ ┃ ┃ ┃ ┣ 📜groups.controller.ts
+ ┃ ┃ ┃ ┣ 📜groups.module.ts
+ ┃ ┃ ┃ ┣ 📜groups.service.ts
+ ┃ ┃ ┃ ┗ 📜groups.spec.ts
+ ┃ ┃ ┗ 📂groupChat
+ ┃ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┃ ┣ 📜chatRoomUsers.entity.ts
+ ┃ ┃ ┃ ┃ ┣ 📜chatRooms.entity.ts
+ ┃ ┃ ┃ ┃ ┗ 📜chats.entity.ts
+ ┃ ┃ ┃ ┣ 📂test
+ ┃ ┃ ┃ ┃ ┗ 📜socket.test.ts
+ ┃ ┃ ┃ ┣ 📜groupChats.controller.ts
+ ┃ ┃ ┃ ┣ 📜groupChats.gateway.ts
+ ┃ ┃ ┃ ┣ 📜groupChats.module.ts
+ ┃ ┃ ┃ ┗ 📜groupChats.service.ts
+ ┃ ┣ 📂matching
+ ┃ ┃ ┣ 📂matchingchat
+ ┃ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┃ ┗ 📜matchingchat.entity.ts
+ ┃ ┃ ┃ ┣ 📜chatGateway.ts
+ ┃ ┃ ┃ ┣ 📜matchingchat.controller.ts
+ ┃ ┃ ┃ ┣ 📜matchingchat.gateway.ts
+ ┃ ┃ ┃ ┣ 📜matchingchat.module.ts
+ ┃ ┃ ┃ ┗ 📜matchingchat.service.ts
+ ┃ ┃ ┣ 📂matchingroom
+ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┗ 📜create-checkInfo.dto.ts
+ ┃ ┃ ┃ ┣ 📜dfdf.ts
+ ┃ ┃ ┃ ┣ 📜matchingroom.controller.ts
+ ┃ ┃ ┃ ┣ 📜matchingroom.module.ts
+ ┃ ┃ ┃ ┗ 📜matchingroom.service.ts
+ ┃ ┃ ┗ 📂quickmatchings
+ ┃ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┃ ┗ 📜create-quickmatching.dto.ts
+ ┃ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┃ ┣ 📜matchingroom.entity.ts
+ ┃ ┃ ┃ ┃ ┗ 📜quickmatchings.entity.ts
+ ┃ ┃ ┃ ┣ 📜quickmatchings.controller.ts
+ ┃ ┃ ┃ ┣ 📜quickmatchings.gateway.ts
+ ┃ ┃ ┃ ┣ 📜quickmatchings.module.ts
+ ┃ ┃ ┃ ┗ 📜quickmatchings.service.ts
+ ┃ ┣ 📂quickmatchings
+ ┃ ┣ 📂restaurantMark
+ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┗ 📜restaurantMark.entity.ts
+ ┃ ┃ ┣ 📜restaurantMark.controller.ts
+ ┃ ┃ ┣ 📜restaurantMark.module.ts
+ ┃ ┃ ┗ 📜restaurantMark.service.ts
+ ┃ ┣ 📂restaurantlists
+ ┃ ┃ ┣ 📜restaurantlists.controller.ts
+ ┃ ┃ ┣ 📜restaurantlists.module.ts
+ ┃ ┃ ┗ 📜restaurantlists.service.ts
+ ┃ ┣ 📂reviews
+ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┗ 📜create-review.dto.ts
+ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┗ 📜reviews.entity.ts
+ ┃ ┃ ┣ 📂interfaces
+ ┃ ┃ ┃ ┗ 📜review.interface.ts
+ ┃ ┃ ┣ 📜reviews.controller.ts
+ ┃ ┃ ┣ 📜reviews.module.ts
+ ┃ ┃ ┗ 📜reviews.service.ts
+ ┃ ┗ 📂users
+ ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃ ┣ 📜create-user.dto.ts
+ ┃ ┃ ┃ ┣ 📜update-user.dto.ts
+ ┃ ┃ ┃ ┗ 📜userProfileDto.ts
+ ┃ ┃ ┣ 📂entities
+ ┃ ┃ ┃ ┗ 📜user.entity.ts
+ ┃ ┃ ┣ 📂test
+ ┃ ┃ ┃ ┣ 📜users.controller.spec.ts
+ ┃ ┃ ┃ ┗ 📜users.service.spec.ts
+ ┃ ┃ ┣ 📜users.controller.ts
+ ┃ ┃ ┣ 📜users.module.ts
+ ┃ ┃ ┗ 📜users.service.ts
+ ┣ 📂common
+ ┃ ┣ 📂auth
+ ┃ ┃ ┣ 📜jwt-access.strategy.ts
+ ┃ ┃ ┣ 📜jwt-refresh.strategy.ts
+ ┃ ┃ ┗ 📜rest-auth-guards.ts
+ ┃ ┣ 📂phone
+ ┃ ┃ ┗ 📜pohone.services.ts
+ ┃ ┗ 📂utils
+ ┃ ┃ ┣ 📜jwt-interface.ts
+ ┃ ┃ ┣ 📜multer.options.ts
+ ┃ ┃ ┗ 📜pohone.services.ts
+ ┣ 📜app.controller.spec.ts
+ ┣ 📜app.controller.ts
+ ┣ 📜app.module.ts
+ ┣ 📜app.service.ts
+ ┗ 📜main.ts
 ```
 
-## Running the app
+# 4. 핵심 트러블슈팅
 
-```bash
-# development
-$ yarn run start
 
-# watch mode
-$ yarn run start:dev
+# 5. 기타 트러블 슈팅
 
-# production mode
-$ yarn run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
