@@ -196,8 +196,8 @@ https://www.erdcloud.com/d/Dub6mgRScDSSMiBT7
  ┗ 📜main.ts
 ```
 
-# 🎈 4. 핵심 트러블슈팅
+# 🎈 핵심 트러블슈팅
 
 
-# 💉 5. 기타 트러블 슈팅
+# 💉 기타 트러블 슈팅
 
